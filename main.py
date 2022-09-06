@@ -11,14 +11,14 @@ from time import sleep
 pyautogui.FAILSAFE = True
 x = 1102
 y = 657
-wait_time = 10
+wait_time = 2
 
 
 def wait_open(image):
     loc = 'None'
     i = 0
     while True:
-        loc = pyautogui.locateOnScreen(image, grayscale=True, confidence=.92)
+        loc = pyautogui.locateOnScreen(image, confidence=.95)
         if str(type(loc)) == "<class 'pyscreeze.Box'>" or i == (wait_time * 2):
             print('Portal Identified')
             break
@@ -30,14 +30,14 @@ def wait_open(image):
 pyautogui.hotkey('win', '1')
 sleep(1.5)
 
-wait_open('OpenEdge.jpg')
+#wait_open('Googlepic.jpg')
 
 pyautogui.hotkey('ctrl', 't')
 pyautogui.write('https://online.umt.edu.pk/', interval=0.02)
 pyautogui.press('enter')
 sleep(0.5)
 
-wait_open('Participate.jpg')
+#wait_open('Participate.jpg')
 sleep(1)
 
 pyautogui.moveTo(x, y)
